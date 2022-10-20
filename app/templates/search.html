@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+(
+{% block content %}
+
+<form method="POST">
+  <div class="search">
+    {{ form.hidden_tag() }}
+
+    <p>Type a pokemon name.</p>
+    {{form.name(class='form-control, justify-content-center')}} <br><br>
+    {{form.submit(class='btn btn-primary')}}<br>
+    {{error}}
+  </div>
+</form>
+
+{% if pokemon %}
+
+<div class="card mx-auto" style="width: 18rem;">
+  <img src="{{pokemon['img']}}" class="card-img-top" alt="pokemon">
+  <div class="title">
+    <p class="card-text">
+    <h4 class="title">{{pokemon['name'].capitalize()}}</h4>
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+
+    <li class="list-group-item"><b>Type:</b> {{pokemon['type'].capitalize()}}</li>
+
+    <li class="list-group-item"><b>Ability:</b> {{pokemon ['abilities']['name'].capitalize()}}</li>
+
+    <li class="list-group-item"><b>Exp:</b> {{pokemon['exp']}}</li>
+    
+    <li class="list-group-item"><b><h5 class="title">Stats:</h5></b> {{pokemon['stats']}}</li>
+  </ul>
+</div>
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+body{
+    padding: 5px;
+}
+
+.welcome{
+    color: red;
+    padding-top: 10px;
+    padding-right: 450px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.greetings{
+    text-align: center;
+    padding-top: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: darkgrey;
+}
+
+.gif{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.search{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.title{
+    font-family: monospace;
+    text-align: center;
+}
