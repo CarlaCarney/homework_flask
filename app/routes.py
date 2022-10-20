@@ -10,14 +10,13 @@ def homePage():
 @app.route('/search', methods=["GET","POST"])
 def pokemon():
     form = searchPokemon()
-    pokemon = ""
+    pokemon = {}
     error = ""
-    if form.validate():
-        pokemon = getPokemon(form.name.data)
-        print(pokemon)
-        form.name.data = ""
-        error = ""
-        if not pokemon:
-            error = "Please enter a valid Pokemon name."
-            redirect(url_for('Pokemon'))
-    return render_template('search.html', title = 'Pokedex', form=form, pokemon=pokemon, error=error)
+    try:
+        if form.validate():
+            pokemon = getPokemon(form.name.data)
+            form.name.data = ""
+    except Exception as e:
+        error = str(e)
+    finally:
+        return render_template('search.html', title = 'Pokedex', form=form, pokemon=pokemon, error=error)

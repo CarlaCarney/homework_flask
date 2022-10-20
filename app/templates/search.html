@@ -13,7 +13,7 @@
   </div>
 </form>
 
-{% if pokemon %}
+{% if pokemon and not error %}
 
 <div class="card mx-auto" style="width: 18rem;">
   <img src="{{pokemon['img']}}" class="card-img-top" alt="pokemon">
@@ -30,7 +30,14 @@
 
     <li class="list-group-item"><b>Exp:</b> {{pokemon['exp']}}</li>
     
-    <li class="list-group-item"><b><h5 class="title">Stats:</h5></b> {{pokemon['stats']}}</li>
+    <li class="list-group-item">
+      <b><h5 class="title">Stats:</h5></b> 
+      <ul>
+        {% for name,stat in pokemon['stats'].items() %}
+        <li>{{name}}: {{stat}}</li>
+        {% endfor %}
+      </ul>
+    </li>
   </ul>
 </div>
 
