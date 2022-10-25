@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST" class="card-design card mx-auto">
+    {{ form.hidden_tag() }}
+
+    <h2 class="logs-bt">Log In</h2>
+    <p>{{ form.username(class='form-control', placeholder='Username')}}</p>
+    <p>{{ form.password(class='form-control', placeholder='Password') }}</p>
+    <p>{{ form.submit(class='btn btn-danger') }}</p>
+</form>
+
+{% endblock %}

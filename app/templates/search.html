@@ -2,44 +2,45 @@
 (
 {% block content %}
 
-<form method="POST">
-  <div class="search">
-    {{ form.hidden_tag() }}
+<form method="POST" class="card-design card mx-auto">
+  {{ form.hidden_tag() }}
 
-    <p>Type a pokemon name.</p>
-    {{form.name(class='form-control, justify-content-center')}} <br><br>
-    {{form.submit(class='btn btn-primary')}}<br>
-    {{error}}
-  </div>
-</form>
+  <h5>Type a pokemon name.</h5><br>
+  <p>{{form.name(class='form-control, justify-content-center')}}</p>
+  <p>{{form.submit(class='btn btn-danger')}}</p>
+  <p>{{error}}</p>
+</form><br><br>
 
 {% if pokemon and not error %}
 
-<div class="card mx-auto" style="width: 18rem;">
+<div class="card mx-auto card-design" style="width: 18rem;">
   <img src="{{pokemon['img']}}" class="card-img-top" alt="pokemon">
   <div class="title">
     <p class="card-text">
     <h4 class="title">{{pokemon['name'].capitalize()}}</h4>
     </p>
   </div>
-  <ul class="list-group list-group-flush">
+  <ul class="list-group poke-card">
 
-    <li class="list-group-item"><b>Type:</b> {{pokemon['type'].capitalize()}}</li>
+    <li class="list-group-item poke-card"><b>Type:</b> {{pokemon['type'].capitalize()}}</li>
 
-    <li class="list-group-item"><b>Ability:</b> {{pokemon ['abilities']['name'].capitalize()}}</li>
+    <li class="list-group-item poke-card"><b>Ability:</b> {{pokemon ['abilities']['name'].capitalize()}}</li>
 
-    <li class="list-group-item"><b>Exp:</b> {{pokemon['exp']}}</li>
-    
-    <li class="list-group-item">
-      <b><h5 class="title">Stats:</h5></b> 
+    <li class="list-group-item poke-card"><b>Exp:</b> {{pokemon['exp']}}</li><br>
+
+    <li class="list-group-item card-design2">
+      <b>
+        <h5 class="title" style="color: red"><u>Stats</u></h5>
+      </b>
       <ul>
         {% for name,stat in pokemon['stats'].items() %}
-        <li>{{name}}: {{stat}}</li>
+        <li style="list-style-type: none;">{{name}}: {{stat}}</li>
         {% endfor %}
       </ul>
     </li>
   </ul>
 </div>
+<br>
 
 {% endif %}
 

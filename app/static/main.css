@@ -1,7 +1,3 @@
-body{
-    padding: 5px;
-}
-
 .welcome{
     color: red;
     padding-top: 10px;
@@ -31,11 +27,47 @@ a:hover{
 
 .search{
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 20px;
 }
 
 .title{
     font-family: monospace;
     text-align: center;
+}
+
+.logs-bt{
+    color: red;
+    text-align: center;
+    padding: 15px;
+    max-width: 400px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.card-design{
+    color: red;
+    text-align: center;
+    padding: 15px;
+    max-width: 400px;
+    background-color: black;
+    border: 5px solid red;
+    border-radius: 20px;
+}
+
+.card-design2{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 6px;
+}
+
+.poke-card{
+    background-color: black;
+    color: white;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
